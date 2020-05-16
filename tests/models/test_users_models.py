@@ -18,6 +18,12 @@ class TestUserModel(TestCase):
             user.hire_date = "test"
             user.save()
 
+    def test_negative_save_none_into_non_null_field(self):
+        user = User()
+        with self.assertRaises(ValueError):
+            user.name = None
+            user.save()
+
     def test_positive(self):
         params = {'name': 'John', 'surname': 'Doe', 'position': 'Team Lead',
                   'hire_date': date.today(), 'level': 'Senior'}
