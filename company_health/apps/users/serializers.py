@@ -1,6 +1,6 @@
 from rest_framework import serializers
 
-from company_health.models.users import User
+from company_health.apps.users.models import User
 
 __all__ = ['UserSerializer']
 

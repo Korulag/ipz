@@ -1,6 +1,6 @@
 from rest_framework.serializers import ModelSerializer, Serializer
 
-from company_health.models.feedbacks import *
+from company_health.apps.feedbacks.models import *
 
 __all__ = ['CompanySatisfactionSerializer', 'FeedbackSerializer', 'PersonalSatisfactionSerializer',
            'TeamSatisfactionSerializer']

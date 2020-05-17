@@ -1,3 +1,5 @@
 django<3.0
+django-extensions
 djangorestframework
 parameters-validation
+psycopg2

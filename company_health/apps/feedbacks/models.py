@@ -12,7 +12,7 @@ from django.db.models import (
 )
 from django.db.models.deletion import CASCADE
 
-from company_health.models.users import User
+from company_health.apps.users.models import User
 
 __all__ = ['CompanySatisfaction', 'Feedback', 'PersonalSatisfaction', 'TeamSatisfaction']
 

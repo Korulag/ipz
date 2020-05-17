@@ -3,7 +3,7 @@ from datetime import date
 from django.test import TestCase
 from rest_framework.serializers import ValidationError
 
-from company_health.serializers.users import UserSerializer
+from company_health.apps.users.serializers import UserSerializer
 
 
 class TestUserSerializer(TestCase):

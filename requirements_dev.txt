@@ -1,0 +1,7 @@
+-r requirements.txt
+ddt
+pytest
+pytest-django
+pytest-django-model
+pytest-django-testing-postgresql
+pytest-djangorestframework
