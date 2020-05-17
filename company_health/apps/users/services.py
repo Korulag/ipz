@@ -15,9 +15,11 @@ from company_health.apps.users.models import User
 class UserService(BaseService):
     model = User
 
+    @classmethod
     @validate_parameters
-    def create(self, name: non_null(non_blank(str)), surname: non_null(non_blank(str)),
+    def create(cls, name: non_null(non_blank(str)), surname: non_null(non_blank(str)),
                position: non_null(non_blank(str)), level: non_null(non_blank(str)),
-               email: validate_email(non_blank(str)), pay: non_negative(non_null(int))) -> User:
-        return self.model.objects.create(name=name, surname=surname, position=position,
-                                         hire_date=date.today(), level=level, email=email, pay=pay)
+               email: non_null(non_blank(str)), pay: non_negative(non_null(int))) -> User:
+        validate_email(email)
+        return cls.model.objects.create(name=name, surname=surname, position=position,
+                                        hire_date=date.today(), level=level, email=email, pay=pay)

@@ -1,5 +1,4 @@
-from rest_framework.viewsets import ModelViewSet
-
+from company_health.api.base import BaseViewSet
 from company_health.apps.feedbacks.models import *
 from company_health.apps.feedbacks.serializers import *
 
@@ -7,25 +6,25 @@ __all__ = ['CompanySatisfactionViewSet', 'FeedbackViewSet', 'PersonalSatisfactio
            'TeamSatisfactionViewSet']
 
 
-class CompanySatisfactionViewSet(ModelViewSet):
-    http_method_names = ['delete', 'get', 'post', 'put']
+class CompanySatisfactionViewSet(BaseViewSet):
+    http_method_names = ['delete', 'get', 'post']
     queryset = CompanySatisfaction.objects.all()
     serializer_class = CompanySatisfactionSerializer
 
 
-class FeedbackViewSet(ModelViewSet):
-    http_method_names = ['delete', 'get', 'post', 'put']
+class FeedbackViewSet(BaseViewSet):
+    http_method_names = ['delete', 'get', 'post']
     queryset = Feedback.objects.all()
     serializer_class = FeedbackSerializer
 
 
-class PersonalSatisfactionViewSet(ModelViewSet):
-    http_method_names = ['delete', 'get', 'post', 'put']
+class PersonalSatisfactionViewSet(BaseViewSet):
+    http_method_names = ['delete', 'get', 'post']
     queryset = PersonalSatisfaction.objects.all()
     serializer_class = PersonalSatisfactionSerializer
 
 
-class TeamSatisfactionViewSet(ModelViewSet):
-    http_method_names = ['delete', 'get', 'post', 'put']
+class TeamSatisfactionViewSet(BaseViewSet):
+    http_method_names = ['delete', 'get', 'post']
     queryset = TeamSatisfaction.objects.all()
     serializer_class = TeamSatisfactionSerializer

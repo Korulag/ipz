@@ -25,6 +25,6 @@ class TestUserSerializer(TestCase):
 
     def test_positive(self):
         data = {'name': 'John', 'surname': 'Doe', 'position': 'Team Lead',
-                'hire_date': date.today(), 'level': 'Senior'}
+                'hire_date': date.today(), 'level': 'Senior', 'pay': 2600.}
         serializer = UserSerializer(data=data)
         serializer.is_valid(raise_exception=True)
