@@ -1,4 +1,4 @@
-django>2.2.11,<3.0
+django>=2.2.13,<3.0
 django-extensions
 djangorestframework
 parameters-validation
